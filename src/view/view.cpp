@@ -18,6 +18,8 @@ static FactoryTest* _ft = nullptr;
 using namespace SmoothUIToolKit;
 using namespace SmoothUIToolKit::SelectMenu;
 
+
+
 struct AppOptionRenderProps_t
 {
     std::uint32_t theme_color;
@@ -28,6 +30,7 @@ struct AppOptionRenderProps_t
 constexpr int _app_render_props_list_size = 8;
 constexpr AppOptionRenderProps_t _app_render_props_list[] = {
     {0xB8DBD9, 0x385B59, "DISPLAY TEST", image_data_icon_display},
+    {0xB8DBD9, 0x385B59, "Ankeralarm", image_data_icon_anchor},
     {0x87C38F, 0x07430F, "BRIGHTNESS", image_data_icon_brightness},
     {0xC9C9EE, 0x49496E, "RTC TIME", image_data_icon_rtc},
     {0xF6A4A4, 0x762424, "WIFI SCAN", image_data_icon_wifi},
@@ -212,20 +215,22 @@ class LauncherMenu : public SmoothOptions
         if (matching_index == 0)
             _ft->_disp_test();
         else if (matching_index == 1)
-            _ft->_disp_set_brightness();
+            _ft->_showAnkeralarmScreen();
         else if (matching_index == 2)
-            _ft->_rtc_test();
+            _ft->_disp_set_brightness();
         else if (matching_index == 3)
-            _ft->_wifi_test();
+            _ft->_rtc_test();
         else if (matching_index == 4)
+            _ft->_wifi_test();
+        else if (matching_index == 5)
             _ft->_encoder_test_user();
         // else if (matching_index == 5)
         //     printf("todo\n");
-        else if (matching_index == 5)
-            _ft->_arkanoid_start();
         else if (matching_index == 6)
-            _ft->_rtc_wakeup_test_user();
+            _ft->_arkanoid_start();
         else if (matching_index == 7)
+            _ft->_rtc_wakeup_test_user();
+        else if (matching_index == 8)
             _ft->_power_off();
     }
 };
@@ -287,3 +292,5 @@ void view_update()
         _batv_time_count = millis();
     }
 }
+
+

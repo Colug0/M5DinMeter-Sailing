@@ -1,0 +1,26 @@
+// get currend Schwoikreis
+curl 'http://openplotter.local:3000/signalk/v1/api/vessels/self/navigation/anchor/currentRadius/value' \
+  -H 'Accept: */*' \
+  -H 'Accept-Language: de-DE,de;q=0.9,en-US;q=0.8,en;q=0.7,it;q=0.6' \
+  -H 'Connection: keep-alive' \
+  -H 'Cookie: JAUTHENTICATION=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6InBhaWtlYSIsImlhdCI6MTY5MzE2ODc3MX0.2pw6LosXKqc1z7HbhbuAQGXiVKPubq8K-UE0yRl7XFM' \
+  -H 'If-None-Match: W/"12-5wSq84xc4b2U8LjaiAc1N29955o"' \
+  -H 'Referer: http://openplotter.local:3000/signalk-anchoralarm-plugin/' \
+  -H 'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36' \
+  -H 'X-Requested-With: XMLHttpRequest' \
+  --insecure
+
+
+  //set schwoikreis
+  curl 'http://openplotter.local:3000/plugins/anchoralarm/setRadius' \
+  -H 'Accept: */*' \
+  -H 'Accept-Language: de-DE,de;q=0.9,en-US;q=0.8,en;q=0.7,it;q=0.6' \
+  -H 'Connection: keep-alive' \
+  -H 'Content-Type: application/x-www-form-urlencoded; charset=UTF-8' \
+  -H 'Cookie: JAUTHENTICATION=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6InBhaWtlYSIsImlhdCI6MTY5MzE2ODc3MX0.2pw6LosXKqc1z7HbhbuAQGXiVKPubq8K-UE0yRl7XFM' \
+  -H 'Origin: http://openplotter.local:3000' \
+  -H 'Referer: http://openplotter.local:3000/signalk-anchoralarm-plugin/' \
+  -H 'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36' \
+  -H 'X-Requested-With: XMLHttpRequest' \
+  --data-raw 'radius=51' \
+  --insecure

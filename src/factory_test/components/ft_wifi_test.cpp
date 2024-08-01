@@ -19,8 +19,8 @@ static int scan_num = 0;
 #define WIFI_PASS_RSSI_TH -65
 #define WIFI_TEST_IS_PASS() wifi_test_result == "ok"
 
-const char* wifi_ssid = "UDUDLRLRBABA";
-const char* wifi_password = "114514";
+const char* wifi_ssid = "Paikea-Network";
+const char* wifi_password = "2001BestesBootderWelt!";
 
 void task_wifi(void* param)
 {

@@ -72,7 +72,7 @@ public:
     // RotaryEncoder _enc = RotaryEncoder(40, 41, RotaryEncoder::LatchMode::TWO03);
     ESP32Encoder _enc;
     int _enc_pos;
-    bool _check_encoder(bool playBuzz = true);
+    bool _check_encoder(bool playBuzz = false);
     void _encoder_test();
     void _encoder_test_new();
     void _encoder_test_user();
@@ -111,6 +111,9 @@ public:
     void _DrawGame(void);        // Draw game (one frame)
     void _UnloadGame(void);      // Unload game
     void _UpdateDrawFrame(void); // Update and Draw (one frame)
+
+    /* Ankeralarm */
+    void _showAnkeralarmScreen();
 
 public:
     FactoryTest()
